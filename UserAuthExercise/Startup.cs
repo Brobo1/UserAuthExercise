@@ -47,16 +47,27 @@ public class Startup {
 		SeedRoles(serviceProvider).Wait();
 	}
 
-	private async Task SeedRoles(IServiceProvider serviceProvider) {
+	private async Task SeedRoles(IServiceProvider serviceProvider)
+	{
 		var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
 		var roleExists = await roleManager.RoleExistsAsync("Admin");
-		if (!roleExists) {
+		if (!roleExists)
+		{
 			await roleManager.CreateAsync(new IdentityRole("Admin"));
 		}
-
-		// Here, you could add code to add specific users to the new role, 
-		// using `UserManager<IdentityUser>`
-		// Generally you do not do this in the application startup; but as a demo or testing it's fine
+		else
+		{
+			var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+			var firstUser   = await userManager.Users.FirstOrDefaultAsync();
+			if(firstUser != null)
+			{
+				var isInRole = await userManager.IsInRoleAsync(firstUser, "Admin");
+				if (!isInRole)
+				{
+					await userManager.AddToRoleAsync(firstUser, "Admin");
+				}
+			}
+		}
 	}
 }
