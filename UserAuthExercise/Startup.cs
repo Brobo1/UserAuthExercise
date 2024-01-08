@@ -16,12 +16,9 @@ public class Startup {
 		services.AddDbContext<ApplicationDbContext>(options =>
 														options.UseSqlite(
 															Configuration.GetConnectionString("DefaultConnection")));
-
 		services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-				.AddRoles<IdentityRole>() // This allows you to use roles.
+				.AddRoles<IdentityRole>() 
 				.AddEntityFrameworkStores<ApplicationDbContext>();
 
-		services.AddControllersWithViews();
-		services.AddRazorPages();
 	}
 }
