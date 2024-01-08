@@ -33,7 +33,7 @@ public class HomeController : Controller {
 		return View();
 	}	
 	
-	[Authorize] 
+	[Authorize(Roles = "Admin")] 
 	public IActionResult SuperSecure() {
 		return View();
 	}

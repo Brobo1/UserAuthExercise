@@ -130,3 +130,4 @@ C:\Users\lynin\OneDrive\Drive\Docs\Code\cShrp\AWBrights\ASPNET\UserAuthExercise\
 C:\Users\lynin\OneDrive\Drive\Docs\Code\cShrp\AWBrights\ASPNET\UserAuthExercise\UserAuthExercise\obj\Debug\net8.0\UserAuthExercise.pdb
 C:\Users\lynin\OneDrive\Drive\Docs\Code\cShrp\AWBrights\ASPNET\UserAuthExercise\UserAuthExercise\obj\Debug\net8.0\UserAuthExercise.genruntimeconfig.cache
 C:\Users\lynin\OneDrive\Drive\Docs\Code\cShrp\AWBrights\ASPNET\UserAuthExercise\UserAuthExercise\obj\Debug\net8.0\ref\UserAuthExercise.dll
+C:\Users\lynin\OneDrive\Drive\Docs\Code\cShrp\AWBrights\ASPNET\UserAuthExercise\UserAuthExercise\obj\Debug\net8.0\UserAuthExercise.sourcelink.json
